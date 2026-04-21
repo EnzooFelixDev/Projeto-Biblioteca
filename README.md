@@ -1,4 +1,4 @@
-# Projeto Biblioteca
+# Projeto Biblioteca 📚
 
 Projeto iniciante em Java que simula o gerenciamento de uma biblioteca pelo terminal.
 
