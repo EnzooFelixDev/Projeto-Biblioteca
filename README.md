@@ -10,7 +10,7 @@ Projeto iniciante em Java que simula o gerenciamento de uma biblioteca pelo term
 - Escolher o tipo/gênero do livro
 - Organizar os livros dentro de uma biblioteca
 
-## Tecnologias usadas
+## Tecnologias usadas ☕
 
 - Java
 - Programação Orientada a Objetos
