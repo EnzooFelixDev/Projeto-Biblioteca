@@ -3,12 +3,14 @@ public class Livro {
     private int id;
     Biblioteca biblioteca;
     TipoLivro tipoLivro;
+    private static int contadorLivros = 0;
 
     public Livro(String titulo, int id, Biblioteca biblioteca, TipoLivro tipoLivro) {
         this.titulo = titulo;
         this.id = id;
         this.biblioteca = biblioteca;
         this.tipoLivro = tipoLivro;
+        contadorLivros++;
     }
 
     public void imprime() {
@@ -21,6 +23,10 @@ public class Livro {
     public Livro(String titulo, int id) {
         this.titulo = titulo;
         this.id = id;
+    }
+
+    public static int getContadorLivros() {
+        return contadorLivros;
     }
 
     public String getTitulo() {

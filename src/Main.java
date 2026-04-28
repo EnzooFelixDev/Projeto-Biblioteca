@@ -112,6 +112,9 @@ public class Main {
                         livros.imprime();
                     }
                 }
+                System.out.println("-----------------------------------");
+                System.out.println("Quantidade De Livros Na Biblioteca: " +Livro.getContadorLivros());
+                System.out.println("-----------------------------------");
             }
 
             if (opção == 4) {
