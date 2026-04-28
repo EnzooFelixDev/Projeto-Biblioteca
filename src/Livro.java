@@ -1,8 +1,8 @@
 public class Livro {
     private String titulo;
     private int id;
-    Biblioteca biblioteca;
-    TipoLivro tipoLivro;
+    private Biblioteca biblioteca;
+    private TipoLivro tipoLivro;
     private static int contadorLivros = 0;
 
     public Livro(String titulo, int id, Biblioteca biblioteca, TipoLivro tipoLivro) {
@@ -18,6 +18,10 @@ public class Livro {
         System.out.println("Gênero: " +this.tipoLivro);
         System.out.println("Biblioteca: "+this.biblioteca.getNome());
         System.out.println("Id: " +this.id);
+    }
+
+    public static void diminuirContadorLivros() {
+        contadorLivros--;
     }
 
     public Livro(String titulo, int id) {
@@ -39,5 +43,9 @@ public class Livro {
 
     public Biblioteca getBiblioteca() {
         return biblioteca;
+    }
+
+    public TipoLivro getTipoLivro() {
+        return tipoLivro;
     }
 }

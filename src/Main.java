@@ -28,7 +28,24 @@ public class Main {
             int opção = sc.nextInt();
 
             if (opção == 1) {
-                for (int i = 2; i <= livrosNaBiblioteca.length; i++) {
+                int op = 1;
+
+                while (op == 1) {
+
+                    int posicaoLivre = -1;
+
+                    for (int i = 0; i < livrosNaBiblioteca.length; i++) {
+                        if (livrosNaBiblioteca[i] == null) {
+                            posicaoLivre = i;
+                            break;
+                        }
+                    }
+
+                    if (posicaoLivre == -1) {
+                        System.out.println("Biblioteca cheia!");
+                        break;
+                    }
+
                     System.out.println("Digite O Nome Do Livro:");
 
                     sc.nextLine();
@@ -40,6 +57,7 @@ public class Main {
 
                     int opçãoTipo = sc.nextInt();
                     sc.nextLine();
+
                     switch (opçãoTipo) {
                         case 1:
                             tipoLivro = TipoLivro.ROMANCE;
@@ -70,22 +88,14 @@ public class Main {
                             break;
                     }
 
-
-                    livrosNaBiblioteca[i] = new Livro(nome, i, biblioteca, tipoLivro);
+                    livrosNaBiblioteca[posicaoLivre] = new Livro(nome, posicaoLivre, biblioteca, tipoLivro);
 
                     System.out.println("Livro Adcionado!");
                     System.out.println("Deseja Adcionar Mais Um?");
                     System.out.println("[1] Sim");
                     System.out.println("[2] Não");
 
-                    int op = sc.nextInt();
-                    if (op == 1) {
-                        continue;
-                    }
-                    if (op == 2) {
-                        break;
-                    }
-
+                    op = sc.nextInt();
                 }
             }
 
@@ -96,6 +106,7 @@ public class Main {
                 if (indice >= 0 && indice < livrosNaBiblioteca.length) {
                     if (livrosNaBiblioteca[indice] != null) {
                         livrosNaBiblioteca[indice] = null;
+                        Livro.diminuirContadorLivros();
                         System.out.println("Livro removido!");
                     } else {
                         System.out.println("Não existe livro nessa posição.");
